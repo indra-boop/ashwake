@@ -1,6 +1,6 @@
 # ASHWAKE
 
-Top-down space shooter. Hold the lane, break the waves, and log the wake you leave behind. A bone-white interceptor against iron raiders — multi-shot, shield, and speed drift out of the wrecks.
+Spaceship game. Hold the lane, break the waves, and log the wake you leave behind. A bone-white interceptor against iron raiders — multi-shot, shield, and speed drift out of the wrecks.
 
 ## Play
 
