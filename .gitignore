@@ -1,0 +1,24 @@
+node_modules
+dist
+.output
+.vercel
+.nitro
+.tanstack
+artifacts
+screenshots
+*.log
+.node_modules.lock
+
+# App Builder platform internals — not part of the game
+.grok/skills
+.grok/references
+.grok/*.jpg
+.grok/*.png
+.grok/*.html
+.grok/status
+.grok/preview.log
+.grok/og-pending
+
+.DS_Store
+.env
+.env.*

@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #07090d;
+  --color-surface: #12171f;
+  --color-surface-2: #1c2430;
+  --color-fg: #e7eef4;
+  --color-muted: #8b98a6;
+  --color-primary: #3ec7ff;
+  --color-primary-ink: #041820;
+  --color-danger: #ff5d4a;
+  --color-border: #243040;
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --radius-lg: 0.75rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.shell {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--color-bg);
+}
+
+.stage {
+  position: relative;
+  height: min(calc(100dvh - 2rem), calc((100vw - 2rem) * 640 / 390));
+  aspect-ratio: 390 / 640;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.38);
+  touch-action: none;
+  user-select: none;
+}
+
+.dossier {
+  display: none;
+  width: 18rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 960px) {
+  .stage {
+    height: min(calc(100dvh - 2rem), calc((100vw - 22rem) * 640 / 390));
+  }
+
+  .dossier {
+    display: flex;
+  }
+}
+
+@media (max-width: 959px) {
+  .shell {
+    padding: 0;
+  }
+
+  .stage {
+    height: min(100dvh, calc(100vw * 640 / 390));
+    width: min(100vw, calc(100dvh * 390 / 640));
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.pad {
+  display: none;
+}
+
+@media (pointer: coarse), (max-width: 800px) {
+  .pad,
+  .fire-pad {
+    display: grid;
+  }
+}
+
+.fire-pad {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    scroll-behavior: auto;
+  }
+}
